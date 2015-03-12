@@ -24,9 +24,13 @@ public class CqrsInterface {
 
     public static void setContext(CqrsContext context) {
         instance.context = context;
-
     }
 
+    /**
+     * Metodo para ejecutar un comadno en el cqrsCore
+     * @param command Comando a ejectuar
+     * @throws Exception Excption lanzada por el core
+     */
     public static void executeCommand(ResponsibilityTask command) throws Exception {
         instance.context.executeCommandTask(command);
     }
